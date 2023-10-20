@@ -1,0 +1,75 @@
+/* Estilos CSS para o menu lateral */
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  #sidebar {
+    width: 200px;
+    background-color: #f1f1f1;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+  }
+  
+  #sidebar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #sidebar ul li {
+    padding: 10px;
+  }
+  
+  #sidebar ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+  }
+  
+  #content {
+    margin-left: 200px; /* Largura do menu lateral */
+    padding: 20px;
+  }
+  
+  /* Estilos responsivos para o menu lateral */
+  @media (max-width: 768px) {
+    #sidebar {
+      width: 100%;
+      height: auto;
+      position: static;
+    }
+  
+    #sidebar ul li {
+      text-align: center;
+    }
+  
+    #content {
+      margin-left: 0;
+    }
+  }
+
+#menu-icon {
+    display: none; /* Oculta o ícone de menu por padrão em telas maiores */
+    }
+  
+@media (max-width: 768px) {
+#menu-icon {
+      display: block; /* Exibe o ícone de menu em telas menores */
+      padding: 10px;
+      cursor: pointer;
+    }
+}
+
+@media (max-width: 768px) {
+    #sidebar.active {
+      transform: translateX(0); /* Exibe o menu quando o ícone de menu é clicado */
+    }
+    
+    #sidebar {
+      transform: translateX(-100%); /* Oculta o menu por padrão */
+      transition: transform 0.3s ease;
+    }
+}
